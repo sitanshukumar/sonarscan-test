@@ -1,9 +1,9 @@
 name: getting strted
 on:
   push:
-    branches: [ "develop" ]
+    branches: [ "SAAS-3352" ]
   pull_request:
-    branches: [ "develop" ]
+    branches: [ develop,main ]
   workflow_dispatch:
 jobs:
   build:
