@@ -6,7 +6,7 @@ on:
     branches: [ develop,main ]
   workflow_dispatch:
 jobs:
-  build:
+  sonar-integration:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
