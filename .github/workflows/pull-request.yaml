@@ -17,7 +17,6 @@ jobs:
       - name: creating Build
         run:
           go build ./...
-      - name: run testcoverage
       - run: go test ./... -coverprofile cover.out
       - uses: sonarsource/sonarqube-scan-action@master
         env:
