@@ -14,6 +14,8 @@ jobs:
         with:
           go-version: '1.17'
           check-latest: true
+      - name: build
+        run: go build 
       - name: run test
       - run: go test ./... -coverprofile cover.out
       - uses: sonarsource/sonarqube-scan-action@master
