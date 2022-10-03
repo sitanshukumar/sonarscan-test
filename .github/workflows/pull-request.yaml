@@ -17,7 +17,7 @@ jobs:
       - name: creating Build
         run:
           go build ./...
-      - run: go test ./... -cover
+      - run: go test ./... -coverprofile cover.out
       - uses: sonarsource/sonarqube-scan-action@master
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
