@@ -16,6 +16,7 @@ jobs:
           check-latest: true
       - run: go test ./... -coverprofile cover.out
       
+      
       - name: SonarQube Scan
         uses: sonarsource/sonarqube-scan-action@master
         with:
@@ -24,7 +25,9 @@ jobs:
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
-        
+      - run:
+          go tool cover -html=cover.out
+          rm -rf *.cover.out
           
 
       
