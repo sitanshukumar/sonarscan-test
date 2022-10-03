@@ -27,5 +27,5 @@ jobs:
       - name: Test Coverage    
         run:
           go test ./... -coverprofile cover.out
-          rm -f *.cover.out 
+          
    
