@@ -24,8 +24,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         
-      - name: Test Coverage    
-        run:
-          go test ./... -coverprofile cover.out
           
+
+      - run: go test ./... -coverprofile cover.out
+      
    
