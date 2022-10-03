@@ -27,7 +27,6 @@ jobs:
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
       - run:
           go tool cover -html=cover.out
-          rm -rf *.cover.out
           
 
       
