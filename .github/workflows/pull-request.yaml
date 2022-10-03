@@ -24,11 +24,8 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
         
-          
-
-      - run: go test ./... -coverprofile cover.out
-      - uses: sonarsource/sonarqube-scan-action@master
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+      - name: Test Coverage    
+        run:
+          go test ./... -coverprofile cover.out
+          rm -f *.cover.out 
    
