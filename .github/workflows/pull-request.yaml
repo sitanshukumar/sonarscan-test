@@ -14,7 +14,12 @@ jobs:
         with:
           go-version: '1.17'
           check-latest: true
-    
+      - name: Sonarqube scan
+        uses: sonarsources/sonarqube-scan-active@v1.1.0
+        with:
+          args:
+            -Dsonar.projectVersion="${{github.run_number}}"
+            
       - run: go test ./... -coverprofile cover.out
       - uses: sonarsource/sonarqube-scan-action@master
         env:
