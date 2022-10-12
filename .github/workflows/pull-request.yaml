@@ -18,7 +18,7 @@ jobs:
       
       
       - name: SonarQube Scan
-        uses: sitanshukumar/ghcomposit-action@v1
+        uses: sitanshukumar/ghcomposit-action@master
         with:
           args:
             -Dsonar.projectVersion="${{github.run_number}}"
